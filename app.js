@@ -13,6 +13,13 @@ const Schema = mongoose.Schema;
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+const mongoDb = process.env.MONGODB_CONNECTION_STRING
+mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "mongo connection error"));
+
+console.log(mongoDb)
+
 const app = express();
 
 // view engine setup
