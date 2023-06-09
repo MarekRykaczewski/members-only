@@ -3,6 +3,7 @@ extends layout
 block content
   if user
     h1= "Welcome back"
+    a(href="/message-form") Create new message
     a(href="/logout") Logout 
   else
     h1= "Sign in"

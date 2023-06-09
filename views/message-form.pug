@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form(action="." method="POST")
+  form(action="/message-form" method="POST")
       label(for="title") Title 
       input(name="title" placeholder="title" type="text")  
       label(for="message") Message

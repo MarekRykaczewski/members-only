@@ -30,4 +30,6 @@ router.get("/logout", (req, res, next) => {
 
 router.get("/message-form", message_controller.message_get)
 
+router.post("/message-form", message_controller.message_post)
+
 module.exports = router;
