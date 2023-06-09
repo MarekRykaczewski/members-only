@@ -5,9 +5,12 @@ const user_controller = require('../controllers/userController');
 const message_controller = require('../controllers/messageController')
 const passport = require('passport');
 
+const Message = require('../models/message')
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { user: req.user });
+router.get('/', async function(req, res, next) {
+  const allMessages = await Message.find().sort({ name: 1}).populate("owner").exec()
+  res.render('index', { user: req.user, messages: allMessages });
 });
 
 router.get('/sign-up-form', user_controller.signup_get)

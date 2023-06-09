@@ -13,3 +13,10 @@ block content
       label(for="password") Password  
       input(name="password" type="text")
       button Log in
+
+  for message in messages
+    div
+      p= message.owner[0].username
+      p= message.title
+      p= message.textContent
+      p= message.createdAt
