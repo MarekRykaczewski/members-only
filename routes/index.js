@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const user_controller = require('../controllers/userController');
+const message_controller = require('../controllers/messageController')
 const passport = require('passport');
 
 /* GET home page. */
@@ -26,5 +27,7 @@ router.get("/logout", (req, res, next) => {
     res.redirect("/")
   })
 })
+
+router.get("/message-form", message_controller.message_get)
 
 module.exports = router;

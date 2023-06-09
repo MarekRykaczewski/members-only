@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  form(action="." method="POST")
+      label(for="title") Title 
+      input(name="title" placeholder="title" type="text")  
+      label(for="message") Message
+      input(name="message" placeholder="Your message..." type="text") 
+      button Submit 
