@@ -1,10 +1,13 @@
 extends layout
 
 block content
-  h1= "Sign in"
-  form(action="/login" method="POST")
-    label(for="username") Username  
-    input(name="username" placeholder="username" type="text")
-    label(for="password") Password  
-    input(name="password" type="text")
-    button Log in
+  if user
+    h1= "Welcome back"
+  else
+    h1= "Sign in"
+    form(action="/login" method="POST")
+      label(for="username") Username  
+      input(name="username" placeholder="username" type="text")
+      label(for="password") Password  
+      input(name="password" type="text")
+      button Log in
