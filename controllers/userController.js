@@ -2,6 +2,7 @@ const User = require('../models/user')
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
+require('dotenv').config();
 
 exports.signup_get = (req, res, next) => {
     res.render("sign-up-form");
@@ -20,7 +21,8 @@ exports.signup_post = (req, res, next) => {
       const user = new User({
           username: req.body.username,
           email: req.body.email,
-          password: hashedPassword
+          password: hashedPassword,
+          membershipType: req.body.passcode === process.env.ADMIN_PASSCODE ? "admin" : "regular"
       });
 
       const result = await user.save();
