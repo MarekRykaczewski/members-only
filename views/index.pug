@@ -28,6 +28,8 @@ block content
         p(class="text-xl text-center")= message.title
         p= message.textContent
         p(class="text-gray-500 text-xs self-end")= message.createdAt
+        if user.membershipType === "admin"
+          a(class="border text-center border-red-700 bg-red-200 hover:bg-red-100 transition px-3 py-1")= "Delete"
   else
     for message in messages
       div(class="flex flex-col mt-5 border border-gray-700 p-3")
