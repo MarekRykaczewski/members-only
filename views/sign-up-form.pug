@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  h1= "Sign up"
-  form(action="/sign-up-form" method="POST")
+  h1(class="text-xl font-bold")= "Sign up"
+  form(class="flex flex-col" action="/sign-up-form" method="POST")
     label(for="username") Username  
-    input(name="username" placeholder="username" type="text")
+    input(class="border px-2 py-1" name="username" placeholder="username" type="text")
     label(for="email") Email
-    input(name="email" placeholder="email" type="text")
+    input(class="border px-2 py-1" name="email" placeholder="email" type="text")
     label(for="password") Password  
-    input(name="password" type="text")
-    button(type="submit") Register
+    input(class="border px-2 py-1" name="password" type="password")
+    button(class="mt-5 border border-blue-700 bg-blue-200 hover:bg-blue-100 transition px-3 py-1" type="submit") Register
