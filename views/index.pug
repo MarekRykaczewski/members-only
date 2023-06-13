@@ -1,6 +1,9 @@
 extends layout
 
 block content
+
+  h1(class="text-3xl font-bold text-center")= "Club House"
+
   if user
     h1(class="text-xl")= `Welcome back ${user.username}`
     div(class="mt-2 flex gap-3")
