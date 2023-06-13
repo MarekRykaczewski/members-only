@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  form(action="/message-form" method="POST")
+  form(class="flex flex-col" action="/message-form" method="POST")
+      h1(class="text-xl font-bold") Create a new message
       label(for="title") Title 
-      input(name="title" placeholder="title" type="text")  
+      input(class="border px-2 py-1" name="title" placeholder="Your title..." type="text")  
       label(for="message") Message
-      input(name="message" placeholder="Your message..." type="text") 
-      button Submit 
+      input(class="border px-2 py-1" name="message" placeholder="Your message..." type="text") 
+      button(class="mt-5 border border-blue-700 bg-blue-200 hover:bg-blue-100 transition px-3 py-1") Submit 
