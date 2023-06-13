@@ -35,4 +35,8 @@ router.get("/message-form", message_controller.message_get)
 
 router.post("/message-form", message_controller.message_post)
 
+router.get("/message-delete/:id", message_controller.message_delete_get)
+
+router.post("/message-delete/:id", message_controller.message_delete_post)
+
 module.exports = router;
